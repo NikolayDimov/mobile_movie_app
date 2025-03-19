@@ -6,6 +6,7 @@ import { Text, View, Image, ScrollView, ActivityIndicator, FlatList } from "reac
 import { useRouter } from "expo-router";
 import useFetch from "@/services/usefetch";
 import { fetchMovies } from "@/services/api";
+import MovieCard from "@/components/MovieCard";
 
 
 export default function Index() {
@@ -46,7 +47,7 @@ export default function Index() {
               </Text>
               <FlatList
                 data={movies}
-                renderItem={({ item }) => <Text className='text-white'>{item.title}</Text>}
+                renderItem={({ item }) => <MovieCard {...item} />}
                 keyExtractor={(item) => item.id.toString()}
                 numColumns={3}
                 columnWrapperStyle={{
