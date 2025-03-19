@@ -10,7 +10,8 @@ const MovieCard = ({
     vote_average,
     release_date,
 }: Movie) => {
-    console.log('poster_path:', poster_path);
+    // console.log('poster_path:', poster_path);
+    const movieYear = release_date?.split("-")[0];
 
     return (
         <Link href={`/movies/${id}`} asChild>
@@ -38,7 +39,7 @@ const MovieCard = ({
 
                 <View className="flex-row items-center justify-between">
                     <Text className="text-xs text-light-300 font-medium mt-1">
-                        {release_date?.split("-")[0]}
+                        {movieYear}
                     </Text>
                     <Text className="text-xs font-medium text-light-300 uppercase">
                         Movie
